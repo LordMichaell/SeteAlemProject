@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/PlayerSprite/Untitled_06-25-2023_12-04-46_4.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 17.25 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+speed = 50
+
+[node name="SpritePlayer" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.25 )
+scale = Vector2( 4, 1 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
